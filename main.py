@@ -15,4 +15,19 @@ operations = {
 }
 def calculator():
     print(logo)
+    num1 = float(input('Give a number?: '))
+    for key in operations:
+        print(key)
+    should_continue = True
+    while should_continue == True:
+        operation_symbol = input('Pick an operation from above: ')
+        num2 = float(input('What is the second number?: '))
+        calculation_function = operations[operation_symbol]
+        answer = calculation_function(num1, num2)
+        print(f'{num1} {operation_symbol} {num2} = {answer}')
+        if input(f'"y" or "n" to continue the calculations or not with {answer}') == 'y':
+            num1 = answer
+        else:
+            should_continue = False
+            calculator()
 calculator()
