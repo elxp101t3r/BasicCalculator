@@ -1,4 +1,5 @@
 from art import logo
+import os
 def add(n1,n2):
     return n1+n2
 def subtract(n1,n2):
@@ -29,5 +30,6 @@ def calculator():
             num1 = answer
         else:
             should_continue = False
+            os.system('clear')
             calculator()
 calculator()
